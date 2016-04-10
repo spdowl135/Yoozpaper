@@ -1,0 +1,741 @@
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin-top: 0px;
+	font: 0.8em Verdana;
+	background-color: white;
+}
+
+#homecontent {
+	position: absolute;
+	top: 6em;
+	height: auto;
+	background-color: #ffffff;
+	width: 99%;
+}
+
+#homeleft {
+	width: 20%;
+	float: left;
+	background-color: #b7b7ff;
+	height: auto;
+	min-height: 70em;
+	border-right: 1px black solid;
+	padding: 1%;
+}
+
+#homecenter {
+	width: 51.7%;
+	left: 21%;
+	height: auto;
+	float: left;
+	padding: 1%;
+	margin-right: 1%;
+}
+
+#homeright {
+	width: 20.6%;
+	float: left;
+	left: 81%;
+	padding: 1%;
+	height: auto;
+	border-left: 1px black solid;
+	background-color: #b7b7ff;
+	min-height: 70em;
+}
+
+#hometop {
+	height: 6em;
+	width: 98.6%;
+	padding-top: 0.5em;
+	padding-left: 1.0em;
+	background-color: #8080ff;
+	border-bottom: 2px black solid;
+}
+
+#hometopleft {
+	height: 6em;
+	width: 25%;
+	background-color: #8080ff;
+	float: left;
+}
+
+#menu
+{
+	height: 1.5em;
+	top: 6em;
+	float: left;
+	margin-top: 50px;
+	padding: 1em;
+}
+
+#hometopright {
+	height: 6em;
+	width: 65%;
+	background-color: #8080ff;
+	float: right;
+}
+#footer {
+	clear: both; float: left; text-align: center; width: 99.3%; border-top: 1px black solid; border-bottom: 2px black solid;
+}
+
+.bot {
+	display:none;	
+}
+
+
+label {
+width: 5em;
+float: left;
+text-align: right;
+margin-right: 0.8em;
+display: block;
+}
+
+.submit input {
+margin-left: 5em;
+}
+
+input {
+color: #000000;
+background: #f5f5f5;
+border: 1px solid #781351;
+}
+
+.submit input {
+color: #400000;
+background: #8080ff;
+border: 2px outset #000000;
+}
+
+fieldset {
+border: 1px solid #000000;
+width: 22em;
+}
+
+legend {
+color: #400000;
+background: #F8AF39;
+border: 1px solid #000000;
+}
+
+.autosuggest, .dropdown, .result {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 250px;
+}
+
+.autosuggest {
+	padding: 4px;
+	border: 1px black solid;
+}
+
+.result {
+	width: 250px;
+	list-style: none;
+}
+
+.result li {
+	padding: 5px;
+	border: 1px black solid;
+	border-top: 0;
+	cursor: pointer;
+}
+
+.result li:hover {
+	background: black;
+	color: white;
+}
+
+.search {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	size: 10;
+}
+
+#landingleft {
+	width: 25%;
+	float: left;
+	background-color: #b7b7ff;
+	min-height: 50em;
+	border-right: 1px black solid;
+	padding: 1%;
+}
+
+#landingright {
+	width: 67%;
+	float: right;
+	background-color: #ffffff;
+	min-height: 50em;
+	border-right: 1px black solid;
+	padding: 1%;
+	margin-right: 0.8%;
+}
+
+.splashlogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80px;
+width: 165px;
+}
+
+
+@font-face
+{
+font-family: myFirstFont;
+src: url('bendable.ttf'),
+     url('bendable.eot') format("opentype"); /* IE */
+}
+
+@font-face
+{
+font-family: newspaperFont;
+src: url('OldNewspaperTypes.ttf'),
+     url('OldNewspaperTypes.eot') format("opentype"); /* IE */
+}
+
+.bunchofus {
+	font-family: myFirstFont;
+	color: #ee1c11;
+	text-decoration: none;
+	top: 0px;
+	font-size: 20px;
+	padding-bottom: 2px;
+}
+
+.title {
+	font-family: newspaperFont;
+	text-align: center;
+}
+
+.titlelink {
+	font-family: newspaperFont;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+}
+.needtologin {
+	color: red;
+}
+
+.links 
+{
+	text-decoration: none;
+	color: red;
+}
+
+#mobile {
+	top: 9em;
+	height: auto;
+}
+
+.postedby {
+	color: red;
+	text-decoration: none;
+}
+
+.when {
+	color: #235D79;
+}
+
+#topbar {
+ width: 100%;
+background-color: black;
+color: white;
+	top: 0;
+	left: 0;
+	text-align: center;
+	position: fixed;
+	height: 35px;
+	box-shadow: 1px;
+z-index: 1;
+}
+
+#bottombar {
+ width: 100%;
+background-color: black;
+	bottom: 0;
+	left: 0;
+	float: left;
+	position: fixed;
+	height: 35px;
+	box-shadow: 1px;
+z-index: 1;
+}
+
+.clear {
+	clear: both;
+}
+
+#listbutton {
+	float: right;
+	display: block;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	cursor: pointer;
+}
+
+#homebutton {
+	float: left;
+	display: block;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	cursor: pointer;
+	background: url('http://www.yoozpaper.com/mobile/homebutton.PNG');
+	height: 30px;
+	width: 30px;
+}
+
+#content {
+	background-color: #ffffff;
+	font-size: 10px;
+	margin-top: 38px;
+	margin-bottom: 50px;
+	padding-bottom: 30px;
+}
+
+.searchterm {
+	color: red;
+	font-style: italic;
+}
+
+#headline {
+	font-size: 30px;
+}
+
+#primary_nav ul {
+    list-style: none;
+    background: #E9E6ED;
+    padding: 5px 0;
+}
+#primary_nav li a {
+    display: block;
+    padding: 0 25px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    letter-spacing: 0.2em;
+    line-height: 4em;
+    height: 4em;
+    border-bottom: 1px solid #383838;
+}
+#primary_nav li:last-child a {
+    border-bottom: none;
+}
+#primary_nav li a:hover,
+#primary_nav li a:focus {
+    color: #1c1c1c;
+    background: #ccc;
+}
+
+#yoozpaperlogo {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.topyoozpaper {
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+}
+
+.yoozthisbutton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #ff920d) );
+	background:-moz-linear-gradient( center top, #ffc477 5%, #ff920d 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc477', endColorstr='#ff920d');
+	background-color:#ffc477;
+	-webkit-border-top-left-radius:20px;
+	-moz-border-radius-topleft:20px;
+	border-top-left-radius:20px;
+	-webkit-border-top-right-radius:20px;
+	-moz-border-radius-topright:20px;
+	border-top-right-radius:20px;
+	-webkit-border-bottom-right-radius:20px;
+	-moz-border-radius-bottomright:20px;
+	border-bottom-right-radius:20px;
+	-webkit-border-bottom-left-radius:20px;
+	-moz-border-radius-bottomleft:20px;
+	border-bottom-left-radius:20px;
+	text-indent:0;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	color:#030003;
+	font-family:Georgia;
+	font-size:12px;
+	font-weight:bold;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width:90px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 0px 0px #cc9f52;
+}
+.yoozthisbutton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff920d), color-stop(1, #ffc477) );
+	background:-moz-linear-gradient( center top, #ff920d 5%, #ffc477 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff920d', endColorstr='#ffc477');
+	background-color:#ff920d;
+}.yoozthisbutton:active {
+	position:relative;
+	top:1px;
+}
+
+.font {
+	color: black;
+	font-size: 16px;
+}
+
+.publishfont {
+	color: black;
+	font-size: 12px;
+}
+
+.storytitle {
+	color: red;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+.mobilepin {
+	display: inline-block;
+	float: left;
+	background: #ffffff;
+	border: 2px solid #ffffff;
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+	margin: 0 2px 15px;
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;
+	padding: 15px;
+	padding-bottom: 5px;
+	background: -webkit-linear-gradient(45deg, #ffffff, #ffffff);
+	opacity: 1;
+	
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+}
+
+.mobilepin img {
+	width: 99%;
+	height 86%;
+	max-height: 400px;
+	max-width: 650px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 15px;
+	margin-bottom: 5px;
+}
+
+#article {
+	font: 17px/21px Georgia, serif;
+	color: black;
+	margin: 0;
+}
+
+.clear {
+	clear: both; 
+}
+
+#article .smallurl {
+	font-size: 8px;
+}
+
+#article br {
+       line-height: 170%;
+}
+
+.dumbBoxWrap { /* The div that shows/hides. */
+	 display:none; /* starts out hidden */ 
+	z-index:40001; /* High z-index to ensure it appears above all content */ 
+	} 
+
+.postBoxWrap { /* The div that shows/hides. */
+	 display:none; /* starts out hidden */ 
+	z-index:40001; /* High z-index to ensure it appears above all content */ 
+	} 
+	
+.photoBoxWrap { /* The div that shows/hides. */
+	 display:none; /* starts out hidden */ 
+	z-index:40001; /* High z-index to ensure it appears above all content */ 
+	} 
+	
+.subscribeBoxWrap { /* The div that shows/hides. */
+	 display:none; /* starts out hidden */ 
+	z-index:40001; /* High z-index to ensure it appears above all content */ 
+	} 
+	
+.applyBoxWrap { /* The div that shows/hides. */
+	 display:none; /* starts out hidden */ 
+	z-index:40001; /* High z-index to ensure it appears above all content */ 
+	}
+	
+.yoozBoxWrap { /* The div that shows/hides. */
+	 display:none; /* starts out hidden */ 
+	z-index:40001; /* High z-index to ensure it appears above all content */ 
+	}
+	
+.dumbBoxOverlay { /* Shades out background when selector is active */ 
+	position:fixed; 
+	width:100%; 
+	height:100%; 
+	background-color:black; 
+	opacity:.5; /* Sets opacity so it's partly transparent */ 
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE transparency */ 
+	filter:alpha(opacity=50); /* More IE transparency */ 
+	z-index:40001; 
+	} 
+	
+.vertical-offset { /* Fixed position to provide the vertical offset */ 
+	position:fixed; 
+	top:10%; 
+	margin-bottom:40px;
+	width:100%; 
+	z-index:40002; /* ensures box appears above overlay */ 
+	} 
+	
+.dumbBox { /* The actual box, centered in the fixed-position div */ 
+	width:355px; /* Whatever width you want the box to be */ 
+	position:relative; 
+	margin:0 auto; /* Everything below is just visual styling */ 
+	background-color:white; 
+	padding:10px; 
+	border:1px solid black; 
+	}
+	
+#opensubview {
+	cursor: pointer;
+	background: orange;
+	padding: 10px;
+	border: 2px solid black ;	
+}
+
+#openthis {
+	cursor: pointer;	
+}
+
+#openapplyview {
+	cursor: pointer;	
+}
+
+#closemodal {
+	cursor: pointer;	
+}
+
+#closemodal3 {
+	cursor: pointer;	
+}
+
+#closemodal5 {
+	cursor: pointer;	
+}
+
+#closemodal9 {
+	cursor: pointer;	
+}
+
+#closemodal1 {
+	cursor: pointer;
+	/*background: orange;
+	color: black;
+	border-radius:5px;
+    -moz-border-radius:5px; /* Firefox 3.6 and earlier */
+	}
+	
+	.crtgrpheadline {
+	text-align: center;
+	font-size: 45px;
+}
+
+.crtgrpheadline2 {
+	text-align: center;
+	font-size: 28px;
+}
+
+.forminput {
+	width: 100%;
+	padding: 20px;
+	font-size: 22px;
+	background: white;
+}
+
+.medforminput {
+	width: 100%;
+	padding: 19px;
+	font-size: 18px;
+	background: white;
+}
+
+.formarea{
+	width: 100%;
+	padding: 20px;
+	font-size: 22px;
+	background: white;
+}
+
+.formdrop {
+	width: 100%;
+	padding: 20px;
+	font-size: 26px;
+	background: white;
+}
+
+.formsubmit {
+	width: 100%;
+	padding: 12px;
+	font-size: 24px;
+	background: black;
+	color: white;
+}
+
+@media only screen 
+    and (max-device-width: 640px), 
+    only screen and (max-device-width: 667px), 
+    only screen and (max-width: 480px)
+{
+/* Initial menu */
+.menu2 {
+  background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
+  left: -235px;  /* start off behind the scenes */
+  height: 100%;
+  position: fixed;
+  width: 235px;
+
+}
+
+.menu2 ul {
+  border-top: 1px solid #636366;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu2 li {
+  border-bottom: 1px solid #636366;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 25px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  padding-top: 3px;
+}
+
+.menu2 a {
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.homebutton-close {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.icon-menu {
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.icon-menu i {
+  margin-right: 5px;
+}
+
+.close-it {
+  color: orange;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 25px;
+}
+}
+
+/* ipad Mini Portrait */
+@media only screen and (min-device-width:700px) 
+{
+/* Initial menu */
+.menu2 {
+  background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
+  left: -265px;  /* start off behind the scenes */
+  height: 100%;
+  position: fixed;
+  width: 265px;
+
+}
+
+.menu2 ul {
+  border-top: 1px solid #636366;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu2 li {
+  border-bottom: 1px solid #636366;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 45px;
+  padding-bottom: 3px;
+  padding-left: 20px;
+  padding-top: 3px;
+}
+
+.menu2 a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.homebutton-close {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.icon-menu {
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.icon-menu i {
+  margin-right: 5px;
+}
+
+.close-it {
+  color: orange;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 35px;
+}		
+}

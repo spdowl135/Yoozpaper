@@ -30,15 +30,15 @@ else
 {
 	//User is logged in!
 }
+/*----------URL information-------*/
+var newURL = window.location.href;
+//var pathArray = window.location.href.split( '=' );
+//var secondLevelLocation = pathArray[1];
+/*----------*/
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
+var subscrip1 = "http://www.yoozpaper.com/myapp/subscrip.php?userid=" + person;
+$('#thearticles').load(subscrip1);
 //document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
-$("#searchform").submit(function(event){
-    event.preventDefault();
-    $.post( 'http://www.yoozpaper.com/myapp/search.php', $("#searchform").serialize(), function(data){
-        $("#searchresults").html(data);
-        $('#searchform')[0].reset();
-    });
-});
 $('#remove').click(function() {
 localStorage.removeItem("user_id");
 window.location = "signin.html";
@@ -71,20 +71,10 @@ window.location = "signin.html";
 <div id="content">
 	<div class="clear"></div>
 	<br />
-		<div class="crtgrpheadline">
-			<h2>Search Form</h2>
-		</div>
-		<hr />
-<form method="post" id="searchform" name="searchform" class="searchform" enctype="multipart/form-data">
-<p><input type = "text" class="forminput" id="srchname" name = 'srchname' placeholder="Search Here..."></input></p>
-<br />
-<p><input type = "submit" id="srchsubmit" name= "srchsubmit" class="formsubmit" value = "Search"></p>
-</form>
+	<h1>Subscriptions</h1>
 	<br />
-		<div class="clear"></div>
-<div id="searchresults">
-	
-</div>
+	<div id = "thearticles"></div>
+	<br />
 </div>
 <div class="clear"></div>
 

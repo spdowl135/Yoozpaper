@@ -265,7 +265,18 @@ background-color: black;
 	position: fixed;
 	height: 35px;
 	box-shadow: 1px;
-z-index: 1;
+	z-index: 1;
+}
+
+#bottombar a {
+text-decoration: none;
+cursor: pointer;
+color: white;
+padding-left: 5px;
+padding-right: 10px;
+padding-top: 10px;
+font-weight: bold;
+font-size: 15px;
 }
 
 .clear {

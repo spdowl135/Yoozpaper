@@ -472,6 +472,11 @@ font-size: 15px;
        line-height: 170%;
 }
 
+#article img {
+       text-align: center;
+}
+
+
 .dumbBoxWrap { /* The div that shows/hides. */
 	 display:none; /* starts out hidden */ 
 	z-index:40001; /* High z-index to ensure it appears above all content */ 

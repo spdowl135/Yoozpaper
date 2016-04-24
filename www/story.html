@@ -30,6 +30,7 @@ else
 {
 	//User is logged in!
 }
+var viewportwidth = window.innerWidth;
 /*----------URL information-------*/
 var newURL = window.location.href;
 var pathArray = window.location.href.split( '=' );
@@ -37,7 +38,7 @@ var secondLevelLocation = pathArray[1];
 /*----------*/
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
 var headline1 = "http://www.yoozpaper.com/myapp/headline.php?id=" + secondLevelLocation;
-var story1 = "http://www.yoozpaper.com/myapp/thestory.php?id=" + secondLevelLocation;
+var story1 = "http://www.yoozpaper.com/myapp/thestory.php?id=" + secondLevelLocation + "&thewidth=" + viewportwidth;
 $('#headline').load(headline1);
 $('#article').load(story1);
 //document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");

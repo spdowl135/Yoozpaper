@@ -39,7 +39,7 @@ $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
 var headline1 = "http://www.yoozpaper.com/myapp/headline.php?id=" + secondLevelLocation;
 var story1 = "http://www.yoozpaper.com/myapp/thestory.php?id=" + secondLevelLocation;
 $('#headline').load(headline1);
-$('#thestory').load(story1);
+$('#article').load(story1);
 //document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
 $('#remove').click(function() {
 localStorage.removeItem("user_id");
@@ -75,7 +75,7 @@ window.location = "signin.html";
 	<br />
 	<h1><div id = "headline"></div></h1>
 	<br />
-	<div id = "thestory"></div>
+	<div id = "article"></div>
 	<br />
 </div>
 <div class="clear"></div>

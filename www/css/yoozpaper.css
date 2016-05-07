@@ -510,6 +510,10 @@ font-size: 15px;
        text-align: center;
 }
 
+#papername {
+       text-align: center;
+}
+
 
 .dumbBoxWrap { /* The div that shows/hides. */
 	 display:none; /* starts out hidden */ 

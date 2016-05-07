@@ -30,18 +30,9 @@ else
 {
 	//User is logged in!
 }
-/*----------URL information-------*/
-var newURL = window.location.href;
-var pathArray = window.location.href.split( '=' );
-var secondLevelLocation = pathArray[1];
-/*----------*/
-var viewportwidth = window.innerWidth;
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
-var papername1 = "http://www.yoozpaper.com/myapp/papername.php?id=" + secondLevelLocation;
-var articles1 = "http://www.yoozpaper.com/myapp/myarticles.php?id=" + secondLevelLocation + "&thewidth=" + viewportwidth;
-$('#papername').load(papername1);
-$('#thearticles').load(articles1);
-//document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
+$('#primary_nav').load('http://www.yoozpaper.com/myapp/mypapers.php');
+document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
 $('#remove').click(function() {
 localStorage.removeItem("user_id");
 window.location = "signin.html";
@@ -74,10 +65,15 @@ window.location = "signin.html";
 <div id="content">
 	<div class="clear"></div>
 	<br />
-	<h1><div id = "papername"></div></h1>
-	<hr />
-	<div id = "thearticles"></div>
-	<br />
+	<div id = "thisuser">
+		
+		</div>
+		
+		<nav id="primary_nav">
+	<ul>
+
+	</ul>
+	</nav>
 </div>
 <div class="clear"></div>
 

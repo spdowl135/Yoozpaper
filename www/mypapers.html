@@ -24,14 +24,15 @@ function onDeviceReady() {
 var person = window.localStorage.getItem('user_id');
 if (person === null || person.length === 0)
 {
-    //window.location = "signin.html";
+    window.location = "signin.html";
 }
 else
 {
 	//User is logged in!
 }
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
-$('#primary_nav').load('http://www.yoozpaper.com/myapp/mypapers.php');
+var papersurl = "http://www.yoozpaper.com/myapp/mypapers.php?userid=" + person;
+$('#primary_nav').load(papersurl);
 document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
 $('#remove').click(function() {
 localStorage.removeItem("user_id");

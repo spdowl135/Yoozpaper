@@ -29,9 +29,33 @@ if (person === null || person.length === 0)
 else
 {
 	//User is logged in!
+	window.location = "index.html";
 }
+
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
 document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
+$('form').submit(function(){
+var formData = $("#signin").serialize();
+ $.ajax({
+	type: 'POST',
+	data: formData,
+	dataType: 'json',
+	url: 'http://www.yoozpaper.com/myapp/login2.php',
+	success: function(res) {
+    if (res.success) {
+      localStorage.setItem('user_id', res.user_id);  //set user id to local storage
+      window.location = "index.html";
+    } else {
+      alert('Username or Password do not match!');
+    }
+  },
+  error: function() {
+    //this will trigger in case the server send invalid JSON (or other types of errors)
+    alert('Error logging in');
+  }
+    });
+	return false;
+});
 $('#remove').click(function() {
 localStorage.removeItem("user_id");
 window.location = "signin.html";
@@ -56,25 +80,34 @@ window.location = "signin.html";
 </head>     
 	<body>
 <div id="fb-root"></div>	
-	
-<div id="topbar">
-	
-</div>
-<div class="clear"></div>
-<div id="content">
-	<div class="clear"></div>
-	<br />
-	<h1>Yoozpaper</h1>
-	<br />
-	Hello Yoozpaper!
-</div>
-<div class="clear"></div>
+<h1 class="bunchofus2">Bunch Of Us</h1>
+    <div class="container">
 
-<div id = "bottombar">
-	<a onclick="window.location='index.html'">Home</a>
-	<a onclick="location.reload();">Refresh</a>
-	<a onclick="window.location='subscriptions.html'">Subscriptions</a>
-</div>
+      <form class="form-signin" method="post" id="signin" name="signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input type="text" id="inputuser" name="inputuser" class="form-control" placeholder="Username" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputpassword" name="inputpassword" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+      <br />
+      <div class="center">
+      <p><b>Or</b></p>
+      </div>
+      <br />
+      <!--<button class="btn btn-lg btn-primary btn-block" type="button" onClick="fblogin();">Sign in with Facebook</button>-->
+      <div id = "results"></div>
+      <!--<a href="#" rel="nofollow" class="fblogin-button" onClick="javascript:CallAfterLogin();return false;">Login with Facebook</a>
+      <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false" onlogin="CallAfterLogin();" scope="publish_actions,email"></div>
+      <!--<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false" onlogin="javascript:CallAfterLogin();" scope="publish_actions,email"></div>-->
+<hr />
+<ul>
+	<li><a href="register.html"><button type="button">Register</button></a></li>
+	<li><a href="forgotuser.html"><button type="button">Forgot Username</button></a></li>
+	<li><a href="forgotpass.html"><button type="button">Forgot Password</button></a></li>
+</ul>
+    </div>
         <script type="text/javascript">
             app.initialize();
         </script>	

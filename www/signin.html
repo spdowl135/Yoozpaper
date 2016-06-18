@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
         <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
         <!--<link rel="stylesheet" type="text/css" href="css/jqmobile.css" />-->
+        <link rel="stylesheett" type="text/css" href="css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="css/yoozpaper.css" media="screen"/>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
              <script type="text/javascript" src="cordova.js"></script>
              <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
              <script src="js/jquery-1.11.3.js" type="text/javascript"></script>
@@ -21,7 +21,7 @@
     <script type="text/javascript">
 document.addEventListener('deviceready', this.onDeviceReady, false);	
 function onDeviceReady() {
-var person = window.localStorage.getItem('user_id');
+var person = window.localStorage.getItem('the_user_id');
 if (person === null || person.length === 0)
 {
     //window.location = "signin.html";
@@ -33,7 +33,7 @@ else
 }
 
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
-document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
+document.getElementById("thisuser").innerHTML = localStorage.getItem("the_user_id");
 $('form').submit(function(){
 var formData = $("#signin").serialize();
  $.ajax({
@@ -43,7 +43,7 @@ var formData = $("#signin").serialize();
 	url: 'http://www.yoozpaper.com/myapp/login2.php',
 	success: function(res) {
     if (res.success) {
-      localStorage.setItem('user_id', res.user_id);  //set user id to local storage
+      localStorage.setItem('the_user_id', res.the_user_id);  //set user id to local storage
       window.location = "index.html";
     } else {
       alert('Username or Password do not match!');
@@ -57,7 +57,7 @@ var formData = $("#signin").serialize();
 	return false;
 });
 $('#remove').click(function() {
-localStorage.removeItem("user_id");
+localStorage.removeItem("the_user_id");
 window.location = "signin.html";
 });
 };	
@@ -80,15 +80,16 @@ window.location = "signin.html";
 </head>     
 	<body>
 <div id="fb-root"></div>	
-<h1 class="bunchofus2">Yoozpaper</h1>
+<b><div id = "thisuser"></div></b>
+<h1>Yoozpaper</h1>
     <div class="container">
 
       <form class="form-signin" method="post" id="signin" name="signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Username</label>
-        <input type="text" id="inputuser" name="inputuser" class="form-control" placeholder="Username" required autofocus>
+        <input type="text" id="inputuser" name="inputuser" class="form-control" placeholder="Username" required autofocus><br />
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputpassword" name="inputpassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputpassword" name="inputpassword" class="form-control" placeholder="Password" required><br />
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
       <br />

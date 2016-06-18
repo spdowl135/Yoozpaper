@@ -21,7 +21,7 @@
     <script type="text/javascript">
 document.addEventListener('deviceready', this.onDeviceReady, false);	
 function onDeviceReady() {
-var person = window.localStorage.getItem('user_id');
+var person = window.localStorage.getItem('the_user_id');
 if (person === null || person.length === 0)
 {
     window.location = "signin.html";
@@ -43,7 +43,7 @@ $('#headline').load(headline1);
 $('#article').load(story1);
 //document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
 $('#remove').click(function() {
-localStorage.removeItem("user_id");
+localStorage.removeItem("the_user_id");
 window.location = "signin.html";
 });
 };	

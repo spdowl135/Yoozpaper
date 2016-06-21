@@ -512,6 +512,7 @@ font-size: 15px;
 
 #papername {
        text-align: center;
+       font-size: 26px;
 }
 
 
@@ -725,6 +726,23 @@ font-size: 15px;
   text-transform: uppercase;
   line-height: 25px;
 }
+}
+
+.secmodal {
+	text-align: center;	
+}
+
+.sectionbtn {
+	background-color: gray;
+	color: black;
+	font-size: 14px;
+	font-weight: bolder;
+	border-radius: 20px;
+	width: 90%;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom:10px;
+	border: 0;
 }
 
 /* ipad Mini Portrait */

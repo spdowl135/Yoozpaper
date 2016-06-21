@@ -30,8 +30,16 @@ else
 {
 	//User is logged in!
 }
+/*----------URL information-------*/
+var newURL = window.location.href;
+var pathArray = window.location.href.split( '=' );
+var secondLevelLocation = pathArray[1];
+/*----------*/
+var viewportwidth = window.innerWidth;
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
-document.getElementById("thisuser").innerHTML = localStorage.getItem("the_user_id");
+var main1 = "http://www.yoozpaper.com/myapp/otherarticles.php?ptype=Home&thewidth=" + viewportwidth;
+$('#thearticles').load(main1);
+//document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
 $('#remove').click(function() {
 localStorage.removeItem("the_user_id");
 window.location = "signin.html";
@@ -63,26 +71,49 @@ window.location = "signin.html";
 <div class="clear"></div>
 <div id="content">
 	<div class="clear"></div>
-	<b><div id = "thisuser"></div></b>
 	<br />
-			<nav id="primary_nav">
-	<ul>
-<li><a href="front.html">Read Front Page</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/createnewspaper.php">Create Paper</a></li>
-<li><a href="mypapers.html">My Papers</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/writedirect.php">Write Post</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/opendrafts.php">Open Drafts</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/createalbum.php">Create Album</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/photoalbums.php">My Albums</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/upload.php">Upload Photo</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/sharedpaper.php">Yoozed Articles</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/customize.php">Custom Paper</a></li>
-<li><a href="subscriptions.html">My Subscriptions</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/mysharedarticle.php">My Shares</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/notifications.php">Notifications</a></li>
-<li><a id="remove">Logout!</a></li>
-	</ul>
-	</nav>
+		<div class="secmodal">
+	<!-- Trigger the modal with a button -->
+<!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sections</button>-->
+<button type="button" class="sectionbtn" data-toggle="modal" data-target="#myModal">Sections</button>
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Yoozpaper Sections</h4>
+      </div>
+      <div class="modal-body">
+        <p>	
+        	<nav id="primary_nav"><ul>
+<li><a href="front.html">Front Page</a></li>
+<li><a href="world.html">World Page</a></li>
+<li><a href="sports.html">Sports Page</a></li>
+<li><a href="business.html">Business Page</a></li>
+<li><a href="environment.html">Environment Page</a></li>
+<li><a href="tech.html">Technology Page</a></li>
+<li><a href="travel.html">Travel Page</a></li>
+<li><a href="education.html">Education Page</a></li>
+<li><a href="arts.html">Entertainment Page</a></li>
+<li><a href="life.html">Life Page</a></li>
+</ul></nav>
+</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+	<h1><div id = "papername">Life Page</div></h1>
+	<hr />
+	<div id = "thearticles"></div>
+	<br />
 </div>
 <div class="clear"></div>
 

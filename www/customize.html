@@ -30,8 +30,25 @@ else
 {
 	//User is logged in!
 }
+/*----------URL information-------*/
+var newURL = window.location.href;
+var pathArray = window.location.href.split( '=' );
+var secondLevelLocation = pathArray[1];
+/*----------*/
+var viewportwidth = window.innerWidth;
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
-document.getElementById("thisuser").innerHTML = localStorage.getItem("the_user_id");
+var main1 = "http://www.yoozpaper.com/myapp/leadarticles.php?ptype=all&thewidth=" + viewportwidth;
+$('#thearticles').load(main1);
+//document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
+$("#customize").submit(function(event){
+    event.preventDefault();
+        var category1 = $('#page').val();
+        var searchit = $('#search').val();
+        var sincedate = $('#since').val();
+        var todate = $('#to').val();
+        var url = 'custom.html' + '?category=' + category1 + '&search=' + searchit + '&since=' + sincedate + '&to=' + todate;
+        window.location.href = url;
+});
 $('#remove').click(function() {
 localStorage.removeItem("the_user_id");
 window.location = "signin.html";
@@ -63,26 +80,18 @@ window.location = "signin.html";
 <div class="clear"></div>
 <div id="content">
 	<div class="clear"></div>
-	<b><div id = "thisuser"></div></b>
+	<h1><div id = "papername">Customize Paper</div></h1>
+	<hr />
+<form id = "customize" name = "customize">
+	<center>
+			Category: <select id = "page" name="page"><option value="All">All</option><option value="Business">Business</option><option value="Sports">Sports</option><option value="Technology">Technology</option><option value="Education">Education</option><option value="World">World</option><option value="Weather">Weather</option><option value="Entertainment">Entertainment</option><option value="Home">Home and Garden</option><option value="Travel">Travel</option></select><br />
+			Date Since: <input type="date" id = "since" name="since" /><br />
+			Date To: <input type="date" id = "to" name="to" /><br />
+			Keywords: <input type='text' size='40' id = "search" name='search'></input><br /> 
+			<input type='submit' id = "submit" name='submit' value='Search'>
+	</center>
+</form>
 	<br />
-			<nav id="primary_nav">
-	<ul>
-<li><a href="front.html">Read Front Page</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/createnewspaper.php">Create Paper</a></li>
-<li><a href="mypapers.html">My Papers</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/writedirect.php">Write Post</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/opendrafts.php">Open Drafts</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/createalbum.php">Create Album</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/photoalbums.php">My Albums</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/upload.php">Upload Photo</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/sharedpaper.php">Yoozed Articles</a></li>
-<li><a href="customize.html">Custom Paper</a></li>
-<li><a href="subscriptions.html">My Subscriptions</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/mysharedarticle.php">My Shares</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/notifications.php">Notifications</a></li>
-<li><a id="remove">Logout!</a></li>
-	</ul>
-	</nav>
 </div>
 <div class="clear"></div>
 

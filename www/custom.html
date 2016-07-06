@@ -30,8 +30,27 @@ else
 {
 	//User is logged in!
 }
+/*----------URL information-------*/
+var newURL = window.location.href;
+var pathArray = window.location.href.split( '=' );
+var thirdLevel = pathArray[2];
+var fourthLevel = pathArray[3];
+var fifthLevel = pathArray[4];
+var secondLevel = pathArray[1];
+var newarray = secondLevel.split('&',1);
+var secondLevel = thirdLevel.split('&',1);
+var thirdLevel = fourthLevel.split('&',1);
+var fourthLevel = fifthLevel.split('&',1);
+/*----------*/
+var viewportwidth = window.innerWidth;
+//var useURL = "http://www.yoozpaper.com/myapp/otherarticles.php?ptype=" + newarray + "&searchit=" + secondLevel + "&datesince=" + thirdLevel + "&dateto=" + fourthLevel + "&thewidth=" + viewportwidth;
+//document.getElementById("thisurl").innerHTML = useURL;
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
-document.getElementById("thisuser").innerHTML = localStorage.getItem("the_user_id");
+var main1 = "http://www.yoozpaper.com/myapp/custompaper.php?ptype=" + newarray + "&searchit=" + secondLevel + "&datesince=" + thirdLevel + "&dateto=" + fourthLevel + "&thewidth=" + viewportwidth;
+//var upsearch = secondLevel.toUpperCase();
+var papername1 = secondLevel + " PAPER";
+document.getElementById("papername").innerHTML = papername1;
+$('#thearticles').load(main1);
 $('#remove').click(function() {
 localStorage.removeItem("the_user_id");
 window.location = "signin.html";
@@ -63,26 +82,12 @@ window.location = "signin.html";
 <div class="clear"></div>
 <div id="content">
 	<div class="clear"></div>
-	<b><div id = "thisuser"></div></b>
 	<br />
-			<nav id="primary_nav">
-	<ul>
-<li><a href="front.html">Read Front Page</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/createnewspaper.php">Create Paper</a></li>
-<li><a href="mypapers.html">My Papers</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/writedirect.php">Write Post</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/opendrafts.php">Open Drafts</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/createalbum.php">Create Album</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/photoalbums.php">My Albums</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/upload.php">Upload Photo</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/sharedpaper.php">Yoozed Articles</a></li>
-<li><a href="customize.html">Custom Paper</a></li>
-<li><a href="subscriptions.html">My Subscriptions</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/mysharedarticle.php">My Shares</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/notifications.php">Notifications</a></li>
-<li><a id="remove">Logout!</a></li>
-	</ul>
-	</nav>
+	<div id = "thisurl"></div>
+	<h1><div id = "papername"></div></h1>
+	<hr />
+	<div id = "thearticles"></div>
+	<br />
 </div>
 <div class="clear"></div>
 

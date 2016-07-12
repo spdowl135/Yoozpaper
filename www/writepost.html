@@ -30,8 +30,46 @@ else
 {
 	//User is logged in!
 }
+/*----------URL information-------*/
+var newURL = window.location.href;
+var pathArray = window.location.href.split( '=' );
+var secondLevelLocation = pathArray[1];
+/*----------*/
+var viewportwidth = window.innerWidth;
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
-document.getElementById("thisuser").innerHTML = localStorage.getItem("the_user_id");
+var main1 = "http://www.yoozpaper.com/myapp/papernm.php?thisuser=" + person;
+
+$.ajax({
+    url: main1,
+    dataType: "text",
+    type: "GET",
+    success: function (data){
+         //manually insert the page
+         $("#paperdbstrip").html(data);
+    }
+});
+
+document.getElementById('user_name1').value = person;
+
+var d = new Date();
+var n = d.getTime();
+var math1 = Math.random();
+var realmath = math1 * 10000;
+var realmath2 = Math.round(realmath);
+var randomid = "" + realmath2 + n;
+document.getElementById('random1').value = randomid;
+//document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
+$("#writepost").submit(function(event){
+    event.preventDefault();
+    $.post( 'http://www.yoozpaper.com/myapp/postpost.php', $("#writepost").serialize(), function(data){
+        var papertitle = $('#paperdbstrip').val();
+        var headline1 = $('#headline1').val();
+        var random2 = $('#random1').val();
+        var headline2 = headline1.split(' ').join('_');
+        var url = 'poststory.html' + '?paperid=' + papertitle + '&headline=' + headline2 + '&useid=' + random2;
+        window.location.href = url;
+    });
+});
 $('#remove').click(function() {
 localStorage.removeItem("the_user_id");
 window.location = "signin.html";
@@ -63,26 +101,23 @@ window.location = "signin.html";
 <div class="clear"></div>
 <div id="content">
 	<div class="clear"></div>
-	<b><div id = "thisuser"></div></b>
+	<h1><div id = "papername">Write Post</div></h1>
+	<hr />
+<form id = "writepost" name = "writepost" method='post'>
+	<center>
+    **Papername:
+<select name="paperdbstrip" id="paperdbstrip" class="formdrop" /><br />
+	**Headline:  <br />    
+	<input type='text' id='headline1' name='headline1' class="medforminput" placeholder="Headline" maxlength='75'></input><br />
+	<input type='hidden' name='user_name1' id='user_name1' value=''>
+	<input type='hidden' name='random1' id='random1' value=''>
+		<p>
+			<input type='submit' name='post' id='post' class="formsubmit" value='Post This'>
+		</p>
+	**Required
+	</center>
+	</form>
 	<br />
-			<nav id="primary_nav">
-	<ul>
-<li><a href="front.html">Read Front Page</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/createnewspaper.php">Create Paper</a></li>
-<li><a href="mypapers.html">My Papers</a></li>
-<li><a href="writepost.html">Write Post</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/opendrafts.php">Open Drafts</a></li>
-<!--<li><a href="http://www.yoozpaper.com/mobile/createalbum.php">Create Album</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/photoalbums.php">My Albums</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/upload.php">Upload Photo</a></li>-->
-<li><a href="http://www.yoozpaper.com/mobile/sharedpaper.php">Yoozed Articles</a></li>
-<li><a href="customize.html">Custom Paper</a></li>
-<li><a href="subscriptions.html">My Subscriptions</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/mysharedarticle.php">My Shares</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/notifications.php">Notifications</a></li>
-<li><a id="remove">Logout!</a></li>
-	</ul>
-	</nav>
 </div>
 <div class="clear"></div>
 

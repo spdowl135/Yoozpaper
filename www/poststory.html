@@ -59,6 +59,26 @@ $.ajax({
     }
 });
 
+var auto_refresh = setInterval(
+function ()
+{
+	var randomid = $("#random1").val();
+	var story1 = $("#story1").val();
+	DATA = 'randomid=' + randomid + '&story1=' + story1;
+	$.ajax({
+		type: "POST",
+		url: "http://www.yoozpaper.com/myapp/autosavedraft.php",
+		data: DATA,
+		cache: false,
+		success: function(draft) {
+			$("#return").html(draft).show();
+		}
+	});
+	setTimeout(function() {
+	$("#return").hide();
+	}, 10000);
+	}, 30000);
+
 //document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
 $("#postpost").submit(function(event){
     event.preventDefault();
@@ -103,7 +123,7 @@ window.location = "signin.html";
 	<div class="clear"></div>
 	<h1><div id = "papername">Write Post</div></h1>
 	<hr />
-<form id = "postpost" name = "postpost" method='post'>
+<form id = "postpost" name = "postpost" method='post' enctype="multipart/form-data">
 	<center>
     **Papername:
 <select name="paperdbstrip" id="paperdbstrip" class="formdrop" /><br />

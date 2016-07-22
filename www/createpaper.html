@@ -30,8 +30,25 @@ else
 {
 	//User is logged in!
 }
+/*----------URL information-------*/
+var newURL = window.location.href;
+var pathArray = window.location.href.split( '=' );
+var secondLevelLocation = pathArray[1];
+/*----------*/
+var viewportwidth = window.innerWidth;
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
-document.getElementById("thisuser").innerHTML = localStorage.getItem("the_user_id");
+
+
+document.getElementById('user_name1').value = person;
+
+//document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
+$("#createpaper").submit(function(event){
+    event.preventDefault();
+    $.post( 'http://www.yoozpaper.com/myapp/processcreatepaper.php', $("#createpaper").serialize(), function(data){
+        var url = 'index.html';
+        window.location.href = url;
+    });
+});
 $('#remove').click(function() {
 localStorage.removeItem("the_user_id");
 window.location = "signin.html";
@@ -63,23 +80,29 @@ window.location = "signin.html";
 <div class="clear"></div>
 <div id="content">
 	<div class="clear"></div>
-			<nav id="primary_nav">
-	<ul>
-<li><a href="front.html">Read Front Page</a></li>
-<li><a href="createpaper.html">Create Paper</a></li>
-<li><a href="mypapers.html">My Papers</a></li>
-<li><a href="writepost.html">Write Post</a></li>
-<li><a href="opendrafts.html">Open Drafts</a></li>
-<!--<li><a href="http://www.yoozpaper.com/mobile/createalbum.php">Create Album</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/photoalbums.php">My Albums</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/upload.php">Upload Photo</a></li>-->
-<li><a href="feed.html">Yoozer Feed</a></li>
-<li><a href="customize.html">Custom Paper</a></li>
-<li><a href="subscriptions.html">My Subscriptions</a></li>
-<li><a href="notifications.html">Notifications</a></li>
-<li><a id="remove">Logout!</a></li>
-	</ul>
-	</nav>
+	<h1><div id = "papername">Create Paper</div></h1>
+	<hr />
+<form id = "createpaper" name = "createpaper" method='post'>
+	<center>
+    **Papername:   
+	<input type='text' id='papername1' name='papername1' class="medforminput" placeholder="Papername" maxlength='50'></input><br />
+	Accessibility:
+<select id="rights" name="rights" class="formdrop">
+	<option value="Public">Public</option>
+	<option value="Yoozers">Yoozers</option>
+	<option value="Private">Private</option>
+	</select>
+<br />
+**Description: Limit 200 Characters ------<br />
+<textarea id = "description" rows = "7" name='description' class="formarea" placeholder="Enter Text..." maxlength='200' onkeyup='return ismaxlength(this)'></textarea>
+	<input type='hidden' name='user_name1' id='user_name1' value=''>
+		<p>
+			<input type='submit' name='post' id='post' class="formsubmit" value='Create Paper'>
+		</p>
+	**Required
+	</center>
+	</form>
+	<br />
 </div>
 <div class="clear"></div>
 

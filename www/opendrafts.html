@@ -31,6 +31,8 @@ else
 	//User is logged in!
 }
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
+var draftsurl = "http://www.yoozpaper.com/myapp/mydrafts.php?userid=" + person;
+$('#primary_nav').load(draftsurl);
 document.getElementById("thisuser").innerHTML = localStorage.getItem("the_user_id");
 $('#remove').click(function() {
 localStorage.removeItem("the_user_id");
@@ -63,21 +65,14 @@ window.location = "signin.html";
 <div class="clear"></div>
 <div id="content">
 	<div class="clear"></div>
-			<nav id="primary_nav">
+	<br />
+	<div id = "thisuser">
+		
+		</div>
+		
+		<nav id="primary_nav">
 	<ul>
-<li><a href="front.html">Read Front Page</a></li>
-<li><a href="createpaper.html">Create Paper</a></li>
-<li><a href="mypapers.html">My Papers</a></li>
-<li><a href="writepost.html">Write Post</a></li>
-<li><a href="opendrafts.html">Open Drafts</a></li>
-<!--<li><a href="http://www.yoozpaper.com/mobile/createalbum.php">Create Album</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/photoalbums.php">My Albums</a></li>
-<li><a href="http://www.yoozpaper.com/mobile/upload.php">Upload Photo</a></li>-->
-<li><a href="feed.html">Yoozer Feed</a></li>
-<li><a href="customize.html">Custom Paper</a></li>
-<li><a href="subscriptions.html">My Subscriptions</a></li>
-<li><a href="notifications.html">Notifications</a></li>
-<li><a id="remove">Logout!</a></li>
+
 	</ul>
 	</nav>
 </div>

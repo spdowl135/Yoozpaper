@@ -41,8 +41,8 @@ var secondLevel = thirdLevel.split('&',1);
 var thirdLevel = fourthLevel.split('&',1);
 /*----------*/
 var viewportwidth = window.innerWidth;
-document.getElementById('user_name1').value = person;
-document.getElementById('random1').value = thirdLevel;
+//document.getElementById('user_name1').value = person;
+//document.getElementById('random1').value = thirdLevel;
 var secondLevel2 = secondLevel.toString();
 var useheadline = secondLevel2.split('_').join(' ');
 document.getElementById('headline1').value = useheadline;
@@ -91,6 +91,17 @@ $.ajax({
          $("#imageindb").val(data);
     }
 });
+
+$("#editpost1").submit(function(event){
+    event.preventDefault();
+    $.post( 'http://www.yoozpaper.com/myapp/editpost.php' + '?storyid=' + thirdLevel, $("#editpost1").serialize(), function(data){
+        var url = 'story.html' + '?id=' + thirdLevel;
+        //alert ("Submitted!");
+        window.location.href = url;
+        //$("#results1").html(data).show();
+    });
+});
+
 /*
 var auto_refresh = setInterval(
 function ()
@@ -113,17 +124,8 @@ function ()
 	}, 30000);
 */
 //document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
-$("#editpost").submit(function(event){
-    event.preventDefault();
-    $.post( 'http://www.yoozpaper.com/myapp/editpost.php', $("#editpost").serialize(), function(data){
-        var papertitle = $('#paperdbstrip').val();
-        var random2 = $('#random1').val();
-        var headline1 = $('#headline1').val();
-        var url = 'story.html' + '?id=' + random2;
-        window.location.href = url;
-        //$("#results1").html(data).show();
-    });
-});
+
+
 $('#remove').click(function() {
 localStorage.removeItem("the_user_id");
 window.location = "signin.html";
@@ -155,9 +157,9 @@ window.location = "signin.html";
 <div class="clear"></div>
 <div id="content">
 	<div class="clear"></div>
-	<h1><div id = "papername">Write Post</div></h1>
+	<h1><div id = "papername">Edit Post</div></h1>
 	<hr />
-<form id = "editpost" name = "editpost" method='post' enctype="multipart/form-data">
+<form id = "editpost1" name = "editpost1" method='post' enctype="multipart/form-data">
 	<center>
     **Papername:
 <select name="paperdbstrip" id="paperdbstrip" class="formdrop" /></select><br /><br />
@@ -177,12 +179,8 @@ window.location = "signin.html";
 				</select><br /><br />
 		<p>
 		<textarea rows='10' name='story1' id='story1' class="formarea"></textarea>
-				<p>
-
-				
-					<input type='hidden' name='user_name1' id='user_name1' value=''></input>
-	<input type='hidden' name='random1' id='random1' value=''></input>
-			<input type='submit' name='post' id='post' class="formsubmit" value='Post This' />
+				<p>				
+			<input type='submit' name='post1' id='post1' class="formsubmit" value='Post This' />
 			
 		</p>
 	</p>

@@ -32,13 +32,50 @@ else
 }
 /*----------URL information-------*/
 var newURL = window.location.href;
-var pathArray = window.location.href.split( '=' );
-var secondLevelLocation = pathArray[1];
+//var pathArray = window.location.href.split( '=' );
+//var secondLevelLocation = pathArray[1];
 /*----------*/
-var viewportwidth = window.innerWidth;
 $('#topbar').load('http://www.yoozpaper.com/myapp/topbar.php');
-var main1 = "http://www.yoozpaper.com/myapp/otherarticles.php?ptype=World&thewidth=" + viewportwidth;
-$('#thearticles').load(main1);
+$('#wrtarticles').hide();
+$('#subarticles').hide();
+$('#yoozarticles').hide();
+
+$('#all').click(function() {
+$('#thearticles').show();
+$('#wrtarticles').hide();
+$('#subarticles').hide();
+$('#yoozarticles').hide();	
+});
+
+$('#write').click(function() {
+$('#wrtarticles').show();
+$('#thearticles').hide();
+$('#subarticles').hide();
+$('#yoozarticles').hide();	
+});
+
+$('#subs').click(function() {
+$('#subarticles').show();
+$('#thearticles').hide();
+$('#wrtarticles').hide();
+$('#yoozarticles').hide();	
+});
+
+$('#yooz').click(function() {
+$('#yoozarticles').show();
+$('#thearticles').hide();
+$('#wrtarticles').hide();
+$('#subarticles').hide();	
+});
+
+var allart1 = "http://www.yoozpaper.com/myapp/allfeed.php?userid=" + person;
+$('#thearticles').load(allart1);
+var wrtart1 = "http://www.yoozpaper.com/myapp/written.php?userid=" + person;
+$('#wrtarticles').load(wrtart1);
+var subscrip1 = "http://www.yoozpaper.com/myapp/subscrip.php?userid=" + person;
+$('#subarticles').load(subscrip1);
+var yoozart1 = "http://www.yoozpaper.com/myapp/yoozed.php?userid=" + person;
+$('#yoozarticles').load(yoozart1);
 //document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
 $('#remove').click(function() {
 localStorage.removeItem("the_user_id");
@@ -71,48 +108,18 @@ window.location = "signin.html";
 <div class="clear"></div>
 <div id="content">
 	<div class="clear"></div>
-	<br />
-		<div class="secmodal">
-	<!-- Trigger the modal with a button -->
-<!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sections</button>-->
-<button type="button" class="sectionbtn" data-toggle="modal" data-target="#myModal">Sections</button>
-</div>
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Yoozpaper Sections</h4>
-      </div>
-      <div class="modal-body">
-        <p>	
-        	<nav id="primary_nav"><ul>
-<li><a href="front.html">Front Page</a></li>
-<li><a href="world.html">World Page</a></li>
-<li><a href="sports.html">Sports Page</a></li>
-<li><a href="business.html">Business Page</a></li>
-<li><a href="environment.html">Environment Page</a></li>
-<li><a href="tech.html">Technology Page</a></li>
-<li><a href="travel.html">Travel Page</a></li>
-<li><a href="education.html">Education Page</a></li>
-<li><a href="arts.html">Entertainment Page</a></li>
-<li><a href="life.html">Life Page</a></li>
-</ul></nav>
-</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-	<h1><div id = "papername">World Page</div></h1>
-	<hr />
+	<div id = "thefeedline"><h3 class="feedtitle">My Feed</h3></div>
+	<div id = "themenu"><div id = "menu"><ul>
+		<li><a id="all">All</a></li>
+		<li><a id="write">Write</a></li>
+		<li><a id="subs">Subscribe</a></li>
+		<li><a id="yooz">Yooz</a></li>
+		</ul></div></div>
+	<div class="clear"></div>
 	<div id = "thearticles"></div>
+	<div id = "wrtarticles"></div>
+	<div id = "subarticles"></div>
+	<div id = "yoozarticles"></div>
 	<br />
 </div>
 <div class="clear"></div>

@@ -299,9 +299,9 @@ font-size: 15px;
 	padding-right: 2px;
 	padding-top: 2px;
 	cursor: pointer;
-	background: url('http://www.yoozpaper.com/mobile/homebutton.PNG');
+	/*background: url('http://www.yoozpaper.com/mobile/homebutton.PNG');
 	height: 30px;
-	width: 30px;
+	width: 30px;*/
 }
 
 #content {
@@ -659,15 +659,59 @@ font-size: 15px;
 	color: white;
 }
 
+#menu {
+	margin: 0;
+    height: 22px;
+    padding: 0px;
+    display: table;
+    width: 100%
+}
+
+#menu ul {	
+	height: 22px;
+	font: 1em Georgia;
+	border-bottom: 1px solid black;	
+	text-align: center;
+	margin: 0;
+    padding: 0px;
+    display: table-row;
+    background: #ccc;
+}
+
+#menu ul li {
+	float: left;
+	list-style: none;
+	padding: 0px;
+}
+
+#menu ul li a {
+	display: block;
+	text-decoration: none;
+	color: black;
+	padding: 0 15px;
+	line-height: 22px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+#thefeedline {
+	border-bottom: 1.5px black solid;
+}
+.feedtitle {
+	text-align: center;
+	font-size: 22px;
+}
+
 @media only screen 
     and (max-device-width: 640px), 
     only screen and (max-device-width: 667px), 
     only screen and (max-width: 480px)
 {
-/* Initial menu */
+/*
+/* Initial menu 
 .menu2 {
   background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
-  left: -235px;  /* start off behind the scenes */
+  left: -235px;  /* start off behind the scenes 
   height: 100%;
   position: fixed;
   width: 235px;
@@ -726,6 +770,7 @@ font-size: 15px;
   text-transform: uppercase;
   line-height: 25px;
 }
+*/
 }
 
 .secmodal {
@@ -748,10 +793,10 @@ font-size: 15px;
 /* ipad Mini Portrait */
 @media only screen and (min-device-width:700px) 
 {
-/* Initial menu */
+/* Initial menu 
 .menu2 {
   background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
-  left: -265px;  /* start off behind the scenes */
+  left: -265px;  /* start off behind the scenes 
   height: 100%;
   position: fixed;
   width: 265px;
@@ -809,5 +854,6 @@ font-size: 15px;
   text-decoration: none;
   text-transform: uppercase;
   line-height: 35px;
-}		
+}	
+*/	
 }

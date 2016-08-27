@@ -78,19 +78,27 @@ window.location = "signin.html";
 
 </script> 
 </head>     
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4fcd4f4c77886bf2"></script>
+   
 	<body>
 <div id="fb-root"></div>	
-<b><div id = "thisuser"></div></b>
-<h1>Yoozpaper</h1>
+	
+<div id="topbar">
+	
+</div>
+<div class="clear"></div>
+<div id="content">
+	<div class="clear"></div>
     <div class="container">
 
       <form class="form-signin" method="post" id="signin" name="signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Username</label>
-        <input type="text" id="inputuser" name="inputuser" class="form-control" placeholder="Username" required autofocus><br />
+        <input type="text" id="inputuser" name="inputuser" class="forminput" placeholder="Username" required autofocus><br />
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputpassword" name="inputpassword" class="form-control" placeholder="Password" required><br />
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <input type="password" id="inputpassword" name="inputpassword" class="forminput" placeholder="Password" required><br />
+        <button class="formsubmit" type="submit">Sign in</button>
       </form>
       <br />
       <div class="center">
@@ -103,11 +111,14 @@ window.location = "signin.html";
       <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false" onlogin="CallAfterLogin();" scope="publish_actions,email"></div>
       <!--<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false" onlogin="javascript:CallAfterLogin();" scope="publish_actions,email"></div>-->
 <hr />
-<ul>
+			<nav id="primary_nav">
+	<ul>
 	<li><a href="register.html"><button type="button">Register</button></a></li>
 	<li><a href="forgotuser.html"><button type="button">Forgot Username</button></a></li>
 	<li><a href="forgotpass.html"><button type="button">Forgot Password</button></a></li>
 </ul>
+</nav>
+    </div>
     </div>
         <script type="text/javascript">
             app.initialize();

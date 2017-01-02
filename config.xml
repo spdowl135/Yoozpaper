@@ -26,8 +26,8 @@
     <!--<gap:plugin name="cordova-plugin-whitelist" source="npm" />-->
     <!--<plugin name="org.apache.cordova.battery-status" spec="0.2.12" source="pgb" />-->
     <plugin name="org.apache.cordova.camera" spec="0.3.6" source="pgb" />
-    <gap:plugin name="cordova-plugin-media-capture" />
-    <gap:plugin name="cordova-plugin-console" />
+    <plugin name="org.apache.cordova.media-capture" spec="0.3.6" source="pgb" />
+    <plugin name="org.apache.cordova.console" spec="0.2.13" source="pgb" />
     <!--<gap:plugin name="cordova-plugin-contacts" />-->
     <gap:plugin name="cordova-plugin-device" />
     <gap:plugin name="cordova-plugin-device-motion" />

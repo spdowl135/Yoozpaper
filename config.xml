@@ -62,6 +62,7 @@
     <plugin name="org.apache.cordova.splashscreen" spec="1.0.0" source="pgb" />
     <plugin name="org.apache.cordova.vibration" spec="0.3.13" source="pgb" />-->
     <icon src="icon.png" />
+    <!--
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
     <icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/icon-72-hdpi.png" />
@@ -85,7 +86,7 @@
     <gap:splash gap:platform="ios" height="1136" src="www/res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" />
     <gap:splash gap:platform="ios" height="1024" src="www/res/screen/ios/screen-ipad-portrait.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="www/res/screen/ios/screen-ipad-landscape.png" width="1024" />
-    <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
+    <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />-->
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" version="1" />
     <!--<plugin name="cordova-plugin-whitelist" version="1" />-->

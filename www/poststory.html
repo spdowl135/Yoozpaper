@@ -80,6 +80,10 @@ function ()
 	}, 30000);
 
 //document.getElementById("thisuser").innerHTML = localStorage.getItem("user_id");
+$('#postpost').ajaxForm({
+                target: '#artupd'
+            });
+/*
 $("#postpost").submit(function(event){
     event.preventDefault();
     $.post( 'http://www.yoozpaper.com/myapp/updpostpost.php', $("#postpost").serialize(), function(data){
@@ -90,6 +94,7 @@ $("#postpost").submit(function(event){
         window.location.href = url;
     });
 });
+*/
 $('#remove').click(function() {
 localStorage.removeItem("the_user_id");
 window.location = "signin.html";
@@ -123,7 +128,7 @@ window.location = "signin.html";
 	<div class="clear"></div>
 	<h1><div id = "papername">Write Post</div></h1>
 	<hr />
-<form id = "postpost" name = "postpost" method='post' enctype="multipart/form-data">
+<form id = "postpost" name = "postpost" method='post' enctype="multipart/form-data" action="http://www.yoozpaper.com/myapp/updpostpost.php">
 	<center>
     **Papername:
 <select name="paperdbstrip" id="paperdbstrip" class="formdrop" /><br />
@@ -163,6 +168,7 @@ window.location = "signin.html";
 	**Required
 	</center>
 	</form>
+	<div id = "artupd"></div>
 	<br />
 </div>
 <div class="clear"></div>
